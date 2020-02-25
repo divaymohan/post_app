@@ -1,0 +1,14 @@
+<html>
+<head>
+    {% if title %}
+        <title>home page -{{ title }}</title>
+    {% else %}
+        <title>home page</title>
+    {% endif %}
+</head>
+<body>
+    {% block content %} {% endblock %}
+</body>
+
+
+</html>
