@@ -2,15 +2,15 @@ from django.shortcuts import render
 posts = [
     {
         'author': 'Divay Mohan',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'Feb 26 2019'
+        'title': 'Worker 1',
+        'content': 'Worker Specification',
+        'date_posted': 'March 4 2019'
     },
     {
-        'author': 'Diksha Rajput',
-        'title': 'Blog Post 2',
-        'content': 'second post content',
-        'date_posted': 'Feb 27 2019'
+        'author': 'Aashish Dahiya',
+        'title': 'Worker 2',
+        'content': 'Worker Specification',
+        'date_posted': 'March 4 2019'
     }
 ]
 
@@ -28,3 +28,17 @@ def about(request):
         'title': 'from-home'
     }
     return render(request, 'blog/about.html', context)
+
+
+def login(request):
+    context = {
+        'title': 'from-register'
+    }
+    return render(request, 'blog/login.html', context)
+
+
+def register(request):
+    context = {
+        'title': 'from-register'
+    }
+    return render(request, 'blog/register.html', context)
