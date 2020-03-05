@@ -1,0 +1,45 @@
+(djangoEnv) divay-Vostro-3546 ॐ  ~/post_app:(2m|git@master!)
+5708 ± python3 manage.py shell                                                ✹
+Python 3.5.2 (default, Oct  8 2019, 13:06:37) 
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Post
+>>> from django.contrib.auth.models import User
+>>> User.objects.all
+<bound method BaseManager.all of <django.contrib.auth.models.UserManager object at 0x7f7d33056438>>
+>>> User.objects.all()
+<QuerySet [<User: divay>, <User: TestUser>]>
+>>> User.objects.first()
+<User: divay>
+>>> User.objects.filter(username="divay")
+<QuerySet [<User: divay>]>
+>>> User.objects.filter(username="divay").first()
+<User: divay>
+>>> user = User.objects.filter(username="divay").first()
+>>> user
+<User: divay>
+>>> user.id
+1
+>>> user.PK
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'User' object has no attribute 'PK'
+>>> user.pk
+1
+>>> user.password
+'pbkdf2_sha256$150000$2jWp81CcxVWx$RttlkbjjV3gHqdZuckoK3MJ7PhJRp3VKHCZvdl0YP08='
+>>> user 
+<User: divay>
+>>> Post.objects.all()
+<QuerySet []>
+>>> post_1 = Post()
+>>> post_1 = Post(title="Blog 1",content = "First Post Content",author=user)
+>>> Post.objects.all()
+<QuerySet []>
+>>> post_1.save()
+>>> Post.objects.all()
+<QuerySet [<Post: Post object (1)>]>
+>>> Post.objects.all()
+<QuerySet [<Post: Post object (1)>]>
+>>> 
