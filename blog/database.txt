@@ -97,3 +97,19 @@ datetime.datetime(2020, 3, 5, 11, 45, 39, 766905, tzinfo=<UTC>)
 >>> 
 
 
+images
+
+>>> from django.contrib.auth.models import User
+>>> user = User.objects.filter(username='dmfire').first()
+>>> user
+<User: dmfire>
+>>> user.profile
+<Profile: dmfire Profile>
+>>> user.profile.image
+<ImageFieldFile: profile_pics/20160825_160559_1472880996733_8LLfvCf.jpg>
+>>> user.profile.image.width
+894
+>>> user.profile.image.height
+670
+>>> user.profile.image.size
+110063
